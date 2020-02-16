@@ -1,16 +1,22 @@
-version: '3'
+version: "3"
 
 services:
-  hugo:
-    container_name: hugo
-    image: peaceiris/hugo
+  frontend:
+    image: nginx
+    restart: always
     volumes:
-      - ./app:/src
-    command:
-      - server
-      - --bind=0.0.0.0
+      - ./dist:/usr/share/nginx/html
     labels:
       - "traefik.enable=true"
-      - "traefik.port=1313"
+      - "traefik.port=80"
       - "traefik.frontend.rule=Host:slamware.de"
       - "traefik.docker.network=traefik_net"
+    networks:
+      - traefik_net
+
+networks:
+  traefik_net:
+    external: true
+
+
+    

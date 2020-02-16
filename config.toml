@@ -1,7 +1,7 @@
 baseURL = "/"
-title = "Goldydocs"
+title = "slamware"
 
-enableRobotsTXT = true
+# enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
@@ -93,7 +93,7 @@ version = "0.0"
 url_latest_version = "https://example.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/opendata-heilbronn/poetryslam"
+github_repo = "https://github.com/opendata-heilbronn/slamware-de"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/opendata-heilbronn/poetryslam"
 
