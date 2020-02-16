@@ -4,13 +4,13 @@ services:
   hugo:
     container_name: hugo
     image: peaceiris/hugo
-    # image: peaceiris/hugo:v0.x.x-mod  # Hugo Modules
-    ports:
-      - 1313:1313
     volumes:
       - ./app:/src
     command:
       - server
       - --bind=0.0.0.0
-      - --disableFastRender
-      - --watch
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=1313"
+      - "traefik.frontend.rule=Host:slamware.de"
+      - "traefik.docker.network=traefik_net"
